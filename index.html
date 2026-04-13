@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firepan Korean BBQ - Waldorf, MD</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- HERO -->
+    <div class="hero">
+        <img src="img/logo_firepan.webp" style="height: 200px; object-fit: contain; margin-bottom: 16px;">
+        <div class="logo-addr">3237 Plaza Dr, Waldorf, MD, 20603</div>
+    </div>
+
+    <div class="hh-banner">
+        <div class="hh-icon">🍻</div>
+        <div class="hh-title">HAPPY HOUR: Mon - Fri · 11:30am - 7:00pm</div>
+        <div class="hh-desc">50% off all cocktails and draft beers</div>
+    </div>
+
+
+    <div class="divider"><span></span><i>· · ·</i><span></span></div>
+
+    <!-- MAIN CARDS-->
+    <div class="main-cards">
+        <!-- Tarjeta 1: Google review-->
+        <a class="card card-review"
+            href="https://www.google.com/maps/place/Firepan+Korean+BBQ+-+Waldorf/@38.6247164,-77.0593929,16612m/data=!3m1!1e3!4m12!1m2!2m1!1sfirepan+korean+bbq!3m8!1s0x89b7a182f69b75d3:0x3a56128c08389063!8m2!3d38.6247243!4d-76.915193!9m1!1b1!15sChJmaXJlcGFuIGtvcmVhbiBiYnEiA4gBAVoUIhJmaXJlcGFuIGtvcmVhbiBiYnGSARFrb3JlYW5fcmVzdGF1cmFudOABAA!16s%2Fg%2F11vddf756c?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" rel="noopener">
+            <div class="card-inner">
+                <div class="g-icon"><span class="g-letter">G</span></div>
+                <div class="card-text">
+                    <div class="stars">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</div>
+                    <div class="card-title">To leave a review</div>
+                    <div class="card-desc">Did you enjoy your experience? Tell us on Google!</div>
+                </div>
+                <div class="card-arrow">›</div>
+            </div>
+        </a>
+
+        <!-- Tarjeta 2: Menu (toggle)-->
+        <div class="card card-menu" onclick="toggleMenu()" id="menu-card" style="cursor:pointer;">
+            <div class="card-inner">
+                <div class="card-icon icon-menu">🍜</div>
+                <div class="card-text">
+                    <div class="card-title">View the menu</div>
+                    <div class="card-desc">AYCE · A la carte · Rolls · Ramen · Bar</div>
+                </div>
+                <div class="card-arrow" id="menu-arrow">›</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Ordenes (toggle) -->
+        <div class="card card-order" onclick="toggleOrder()" id="order-card" style="cursor:pointer;">
+            <div class="card-inner">
+                <div class="card-icon icon-order">📦</div>
+                <div class="card-text">
+                    <div class="card-title">Order Online</div>
+                    <div class="card-desc">UberEats · DoorDash — Home Delivery</div>
+                </div>
+                <div class="card-arrow" id="order-arrow">›</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PANEL MENU-->
+    <div id="menu-panel">
+        <div class="menu-wrap">
+            <div class="menu-header">
+                <div class="menu-header-title">🍖 OUR MENU</div>
+                <button class="menu-close" onclick="toggleMenu()">×</button>
+            </div>
+
+            <div class="menu-tabs" id="menuTabs">
+                <button class="menu-tab active" onclick="showTab('ayce', this)">AYCE</button>
+                <button class="menu-tab" onclick="showTab('beef', this)">Beef</button>
+                <button class="menu-tab" onclick="showTab('pork', this)">Pork</button>
+                <button class="menu-tab" onclick="showTab('chicken', this)">Chicken/Seafood</button>
+                <button class="menu-tab" onclick="showTab('apps', this)">Appetizers</button>
+                <button class="menu-tab" onclick="showTab('rolls', this)">Rolls</button>
+                <button class="menu-tab" onclick="showTab('ramen', this)">Ramen</button>
+                <button class="menu-tab" onclick="showTab('sauce', this)">Sauce</button>
+                <button class="menu-tab" onclick="showTab('drinks', this)">Drinks</button>
+            </div>
+
+            <!-- AYCE -->
+            <div class="menu-section active" id="tab-ayce">
+                <p class="section-note">Price per person · All You Can Eat</p>
+                <div class="ayce-options">
+                    <div class="ayce-card ayce-card-a">
+                        <div class="ayce-hdr ayce-hdr-a">
+                            <div>
+                                <div class="ayce-label">Option A</div>
+                                <!-- <div style="font-size:11px; color: var(--muted); margin-top: 2px;">Seleccion esencial
+                                </div>-->
+                            </div>
+                            <div>
+                                <div class="ayce-price">$29.99</div><span class="ayce-lunch">Lunchh $24.99</span>
+                            </div>
+                        </div>
+                        <div class="ayce-items">
+                            <span class="ayce-tag soy">Soy chicken Thigh</span>
+                            <span class="ayce-tag">Thick-cut Pork Belly</span>
+                            <span class="ayce-tag">Olive Porkchop</span>
+                            <span class="ayce-tag spicy">Spicy Chicken Thigh</span>
+                            <span class="ayce-tag soy">Soy Pork Belly</span>
+                            <span class="ayce-tag">Thin-sliced Beef Brisket</span>
+                            <span class="ayce-tag spicy">Spicy Pork Belly</span>
+                            <span class="ayce-tag">Firepan Steak</span>
+                            <span class="ayce-tag">Unmarinated Porkchop</span>
+                            <span class="ayce-tag spicy">Crazy Firepan Steak</span>
+                            <span class="ayce-tag spicy">Spicy Porkchop</span>
+                            <span class="ayce-tag">Thin-sliced Pork Belly</span>
+                            <span class="ayce-tag soy">Soy Porkchop</span>
+                        </div>
+                        <div class="ayce-also"><strong>+ inclues:</strong>K-ramen , White Rice , Fried Rice , Tortillas
+                            , K-chicken, beef sausage, fries, buldak ramen (+$1.99)</div>
+                    </div>
+
+
+                    <div class="ayce-card ayce-card-b">
+                        <div class="ayce-hdr ayce-hdr-b">
+                            <div>
+                                <div class="ayce-label">Option B</div>
+                                <div style="font-size: 11px; color: #6ea4f0; margin-top: 2px;">Inclues all items from
+                                    OPTION
+                                    A</div>
+                            </div>
+                            <div>
+                                <div class="ayce-price">$33.99</div><span class="ayce-lunch">Lunch $27.99</span>
+                            </div>
+                        </div>
+                        <div class="ayce-items">
+                            <span class="ayce-tag soy">Beef Bulgogi</span>
+                            <span class="ayce-tag spicy">Spicy Bulgogi</span>
+                            <span class="ayce-tag soy">Hawaiian Bulgogi</span>
+                            <span class="ayce-tag">California Roll</span>
+                            <span class="ayce-tag">Crazy California Roll</span>
+                            <span class="ayce-tag">Shrimp Tempura Roll</span>
+                            <span class="ayce-tag soy">Bulgogi Roll</span>
+                            <span class="ayce-tag spicy">Crazy Bulgogi Roll</span>
+                            <span class="ayce-tag spicy">Spicy Bulgogi Roll</span>
+                            <span class="ayce-tag spicy">Crazy Spicy Bulgogi Roll</span>
+                        </div>
+                    </div>
+
+                    <div class="ayce-card ayce-card-c">
+                        <div class="ayce-hdr ayce-hdr-c">
+                            <div>
+                                <div class="ayce-label">Option C</div>
+                                <div style="font-size: 11px; color: #e87a6a; margin-top: 2px;">Inclues all items from
+                                    OPTION
+                                    A + B</div>
+                            </div>
+                            <div>
+                                <div class="ayce-price">$37.99</div><span class="ayce-lunch">Lunch $31.99</span>
+                            </div>
+                        </div>
+                        <div class="ayce-items">
+                            <span class="ayce-tag">Ribeye Steak (con mantequilla)</span>
+                            <span class="ayce-tag">Beef Belly Rib</span>
+                            <span class="ayce-tag soy">Marinated Shrimp</span>
+                            <span class="ayce-tag spicy">Spicy Octopus</span>
+                            <span class="ayce-tag">Olive Beef Steak</span>
+                            <span class="ayce-tag">Crazy Fish</span>
+                            <span class="ayce-tag">Fried Calamari</span>
+                        </div>
+
+                        <div class="ayce-note">
+                            <b>Kids Lunch:</b> $12.99 (4-7 yrs old) , $17.99 (8-12 yrs old) <br>
+                            <b>Kids Dinner:</b> $14.99 (4-7 yrs old) , $17.99 (8-12 yrs old) <br>
+                            <b>Kids Special:</b> Mon - Thu 11:30am - 3pm (excl. holidays) - $5 off AYCE , $2 off a la
+                            carte
+                        </div>
+                    </div>
+
+                    <div class="rules-wrap">
+                        <div class="rules-title">Restaurant Rules</div>
+                        <div class="rule-item"><span class="rule-num">1</span><span>The entire table must choose the
+                                same
+                                order</span></div>
+                        <div class="rule-item"><span class="rule-num">2</span><span>There is 1 hour and 30 minutes
+                                dining
+                                limit</span></div>
+                        <div class="rule-item"><span class="rule-num">3</span><span>Leftovers CAN NOT be taken to
+                                to-go</span>
+                        </div>
+                        <div class="rule-item"><span class="rule-num">4</span><span>To reduceour carbon footprint and
+                                eliminate waste, we will be charging $5 per each meat plate left</span></div>
+                        <div class="rule-item"><span class="rule-num">5</span><span>20% automatic gratuity will be
+                                charged
+                                to party of 6 people or more</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Descripcion de carnes menu-->
+        <div class="menu-section" id="tab-beef">
+            <p class="section-note">A la carte · price / price lunch</p>
+            <!-- Bloque de descripcion para cada carne, incluye precio, descripcion de comida, nombre de comida.-->
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Bulgogi <span class="item-badge badge-hot">⭐ FAV</span> <span
+                            class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Soy Garlic Sliced Ribeye</div>
+                </div>
+                <div class="item-price">$21.99 <span class="item-lunch">Lunch $19.99</span></div>
+            </div>
+            <!-- Fin del bloque e inicio del siguiente -->
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Beef Belly Rib <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Thin-sliced Beef Belly</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Chadol Baegi <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Thin-sliced Beef Brisket</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Bulgogi <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Spicy Sliced Ribeye</div>
+                </div>
+                <div class="item-price">$21.99 <span class="item-lunch">Lunch $19.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Hawaiian Bulgogi <span class="item-badge badge-soy">Soy</span>
+                    </div>
+                    <div class="item-desc">Sliced Ribeye with Pineapples</div>
+                </div>
+                <div class="item-price">$21.99 <span class="item-lunch">Lunch $19.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Firepan Steak <span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Top Blade Steak with our Signature sauce</div>
+                </div>
+                <div class="item-price">$23.99 <span class="item-lunch">Lunch $21.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Crazy Firepan Steak <span class="item-badge badge-hot">🌶🌶 Spicy
+                        </span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Spicy Steak with our Signature Sauce</div>
+                </div>
+                <div class="item-price">$23.99 <span class="item-lunch">Lunch $21.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Olive Beef Steak <span class="item-badge badge-gf">GF</span>
+                    </div>
+                    <div class="item-desc">Top Blade Steak with our Signature Olive Sauce</div>
+                </div>
+                <div class="item-price">$24.99 <span class="item-lunch">Lunch $22.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Ribeye Steak <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Unmarinated Ribeye Steak with Butter</div>
+                </div>
+                <div class="item-price">$24.99 <span class="item-lunch">Lunch $22.99</span></div>
+            </div>
+        </div>
+
+        <!-- FIN DE SECCION DE CARNES DE RES -->
+        <!-- INICIO DE SECCION DE CARNES DE CERDO -->
+
+        <div class="menu-section" id="tab-pork">
+            <p class="section-note">A la carte · price / price lunch</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Unmarinated Pork Belly <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Unmarinated Thick-cut Pork Belly</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Thin Pork Belly <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Thin-Sliced Pork Belly</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Pork Belly <span class="item-badge badge-hot">🌶
+                            Spicy</span></div>
+                    <div class="item-desc">Spicy-marinated Pork Belly</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Soy Pork Belly <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Soy-marinated Pork Belly</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Pork Chop <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Spicy Soy-marinated Pork Chop</div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Olive Pork Chop <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Pork Chop with our Signature Olive Sauce</div>
+                </div>
+                <div class="item-price">$21.99 <span class="item-lunch">Lunch $19.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Unmarinated Pork Chop <span class="item-badge badge-gf">GF</span>
+                    </div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$20.99 <span class="item-lunch">Lunch $18.99</span></div>
+            </div>
+        </div>
+
+        <!-- FIN DE SECCION DE CARNES DE CERDO -->
+        <!-- INICIO DE SECCION DPOLLO -->
+
+        <div class="menu-section" id="tab-chicken">
+            <p class="section-note">A la carte · price / price lunch</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Dak Galbi <span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Soy Chicken Thigh</div>
+                </div>
+                <div class="item-price">$17.99 <span class="item-lunch">Lunch $15.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Dak Galbi <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Spicy Chicken Thigh</div>
+                </div>
+                <div class="item-price">$17.99 <span class="item-lunch">Lunch $15.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Marinated Shrimp <span class="item-badge badge-soy">Soy</span>
+                    </div>
+                    <div class="item-desc">Soy Marinated Peel-on Shrimp</div>
+                </div>
+                <div class="item-price">$19.99 <span class="item-lunch">Lunch $17.99</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Octopus <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Spicy Marinated Octopus</div>
+                </div>
+                <div class="item-price">$19.99 <span class="item-lunch">Lunch $17.99</span></div>
+            </div>
+        </div>
+        <!-- FIN DE SECCION DE POLLO -->
+
+        <!-- INICIO DE SECCION DE APPETIZZER-->
+
+        <div class="menu-section" id="tab-apps">
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Corn Cheese <span class="item-badge badge-v">V</span><span
+                            class="item-badge badge-d">D</span></div>
+                    <div class="item-desc">Sweet Corn Melted Butter and Cheese</div>
+                </div>
+                <div class="item-price">$6.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Steamed Egg <span class="item-badge badge-gf">GF</span></div>
+                    <div class="item-desc">Fluffy and soft, garnished with Green Onions</div>
+                </div>
+                <div class="item-price">$4.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">SoyBean Paste Stew <span class="item-badge badge-soy">Soy</span>
+                    </div>
+                    <div class="item-desc">Korean Soybean Paste Stew with Veggies</div>
+                </div>
+                <div class="item-price">$6.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Tofu Stew <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Stew made with freshly curdled Soft Tofu and Veggies</div>
+                </div>
+                <div class="item-price">$6.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Tomato Chicken Soup <span class="item-badge badge-soy">Soy</span>
+                    </div>
+                    <div class="item-desc">Tomato, Basil, Chicken, Pasta</div>
+                </div>
+                <div class="item-price">$6.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">K-Chicken</div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$10.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Fried Dumplings <span class="item-badge badge-v">V</span></div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$6.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Fried Calamari</div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$10.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">French Fries <span class="item-badge badge-v">V</span></div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$3.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Nachos</div>
+                    <div class="item-desc">Choice of meat:</div>
+                    <div class="item-desc">Chicken/Bulgogi/Shrimp/Porkbelly</div>
+                </div>
+                <div class="item-price">$17.99</div>
+            </div>
+
+            <!-- CHICKEN WINGS -->
+            <div class="section-head"> Chicken Wings</div>
+            <div class="wings-grid">
+                <div class="wing-chip">
+                    <div class="wing-qty">6 pcs</div>
+                    <div class="wing-price">$11.49</div>
+                </div>
+                <div class="wing-chip">
+                    <div class="wing-qty">10 pcs</div>
+                    <div class="wing-price">$14.99</div>
+                </div>
+                <div class="wing-chip">
+                    <div class="wing-qty">15 pcs</div>
+                    <div class="wing-price">$23.49</div>
+                </div>
+                <div class="wing-chip">
+                    <div class="wing-qty">20 pcs</div>
+                    <div class="wing-price">$29.99</div>
+                </div>
+                <div class="wing-chip">
+                    <div class="wing-qty">30 pcs</div>
+                    <div class="wing-price">$42.99</div>
+                </div>
+            </div>
+
+            <!-- BANCHAN -->
+            <div class="section-head"> Banchan (Korean Side Dish)</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Kimchi</span>
+                <span class="drink-chip">Radish Wrap</span>
+                <span class="drink-chip">Pickled Jalapeños & Onions</span>
+                <span class="drink-chip">Fish Cake</span>
+                <span class="drink-chip">Salad</span>
+            </div>
+        </div>
+
+        <!-- INICIO DE SECCION DE ROLLS -->
+
+        <div class="menu-section" id="tab-rolls">
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">California Roll</div>
+                    <div class="item-desc">Crab Stick and Avocado</div>
+                </div>
+                <div class="item-price">$8.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Crazy California Roll</div>
+                    <div class="item-desc">Fried Roll, Crab Stick, Avocado with Eel Sauce and Spicy Mayo
+                    </div>
+                </div>
+                <div class="item-price">$9.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Bulgogi Roll <span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Beef Ribeye with Signature Sauce</div>
+                </div>
+                <div class="item-price">$8.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Crazy Bulgogi Roll <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Fried Beef Ribeye with Signature Sauce, Eel Sauce and Spicy Mayo
+                    </div>
+                </div>
+                <div class="item-price">$8.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Bulgogi Roll <span class="item-badge badge-hot">🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Fried Red Pepper Beef Ribeye with Signature Sauce, Eel Sauce and
+                        Spicy
+                        Mayo</div>
+                </div>
+                <div class="item-price">$9.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Crazy Spicy Bulgogi Roll <span class="item-badge badge-hot">🌶🌶🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Fried Red Pepper Beef Ribeye with Signature Sauce, Eel Sauce and
+                        Spicy
+                        Mayo</div>
+                </div>
+                <div class="item-price">$9.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Shrimp Tempura Roll</div>
+                    <div class="item-desc">Shrimp, Flour, and Tempura batter mix</div>
+                </div>
+                <div class="item-price">$9.99</div>
+            </div>
+        </div>
+
+        <!-- INICIO DE SECCION DE RAMEN -->
+        <div class="menu-section" id="tab-ramen">
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">K-Ramen <span class="item-badge badge-hot">🌶 Spicy</span><span
+                            class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc">Add Brisket + $3.00</div>
+                </div>
+                <div class="item-price">$9.99</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Buldak Ramen <span class="item-badge badge-hot">🌶🌶🌶
+                            Spicy</span><span class="item-badge badge-soy">Soy</span></div>
+                    <div class="item-desc"></div>
+                </div>
+                <div class="item-price">$12.99</div>
+            </div>
+        </div>
+
+        <!-- SALSAS -->
+        <div class="menu-section" id="tab-sauce">
+            <p class="section-note" style="padding-bottom:8px;">🥣 Refillable sauces included with your order.</p>
+            <div class="sauces">
+                <span class="sauce-tag">Soy Garlic</span>
+                <span class="sauce-tag">Chimichurri</span>
+                <span class="sauce-tag">Soy Bean Paste</span>
+                <span class="sauce-tag">Salt & Pepper (Sesame Oil)</span>
+                <span class="sauce-tag">Gochujang</span>
+            </div>
+            <div class="section-head" style="padding-top:4px;">🥗 Vegetable Set (incluido en AYCE)</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Jalapeños</span>
+                <span class="drink-chip">Garlic</span>
+                <span class="drink-chip">Onion</span>
+                <span class="drink-chip">Romaine</span>
+                <span class="drink-chip">Zucchini</span>
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-section" id="tab-drinks">
+            <div class="drink-cat">🍹 Cocktails</div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Coconut Mojito</div>
+                    <div class="item-desc">Malibu, Piña Colada, Lime, Mint, Sprite</div>
+                </div>
+                <div class="item-price">$14</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Lychee Martini</div>
+                    <div class="item-desc">Vodka, St Germaine, Lychee syrup</div>
+                </div>
+                <div class="item-price">$15</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Old Fashioned</div>
+                    <div class="item-desc">Bourbon, Disaronne, Bitters</div>
+                </div>
+                <div class="item-price">$16</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Lychee Mai Tai</div>
+                    <div class="item-desc">Light & Dark Rum, Pineapple, Lychee, Grenadine</div>
+                </div>
+                <div class="item-price">$15</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Henny Delight</div>
+                    <div class="item-desc">Hennessy, Peach Schnapps, Soda</div>
+                </div>
+                <div class="item-price">$15</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">NY Sour</div>
+                    <div class="item-desc">Bourbon, Lemon, Pinot Noir</div>
+                </div>
+                <div class="item-price">$15</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mango Twister</div>
+                    <div class="item-desc">Vodka, Mango, Lime</div>
+                </div>
+                <div class="item-price">$14</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Flavored Margarita</div>
+                    <div class="item-desc">Mango · Strawberry · Peach · Pineapple · Lychee · Apple · Blueberry</div>
+                </div>
+                <div class="item-price">$15</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Blue Island <span class="item-badge badge-pop">SIGNATURE</span></div>
+                    <div class="item-desc">Malibu, White Rum, Pineapple, Blue Curaçao</div>
+                </div>
+                <div class="item-price">$14</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mimosa Flight</div>
+                    <div class="item-desc">Choose 4: Strawberry, Peach, Mango, Watermelon, Green Apple, Blueberry, Lime
+                    </div>
+                </div>
+                <div class="item-price">$20</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Margarita Flight</div>
+                    <div class="item-desc">Choose 4 sabores</div>
+                </div>
+                <div class="item-price">$25</div>
+            </div>
+
+            <div class="drink-cat" style="margin-top:4px;">🍶 Soju</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Chamisul Original $15.99</span><span class="drink-chip">Chamisul Fresh
+                    $15.99</span>
+                <span class="drink-chip">Jinro Is Back $15.99</span><span class="drink-chip">Apple $15.99</span>
+                <span class="drink-chip">Apple Mango $15.99</span><span class="drink-chip">Honeydew $15.99</span>
+                <span class="drink-chip">Lemon $15.99</span><span class="drink-chip">Peach $15.99</span>
+                <span class="drink-chip">Grapefruit $15.99</span><span class="drink-chip">Strawberry $15.99</span>
+                <span class="drink-chip">Yogurt $15.99</span><span class="drink-chip">Plum $15.99</span>
+                <span class="drink-chip">Green Grape $15.99</span>
+                <span class="drink-chip" style="border-color:rgba(243,156,18,.4);color:var(--gold);">Soju Slush
+                    $19.99</span>
+                <span class="drink-chip" style="border-color:rgba(243,156,18,.4);color:var(--gold);">Sornac Tower
+                    $49.99</span>
+            </div>
+
+            <div class="drink-cat">🍺 Beer</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Draft Pitcher Import $16.99 / Dom. $11.99</span>
+                <span class="drink-chip">Miller Lite $4</span><span class="drink-chip">Yuengling $4</span>
+                <span class="drink-chip">Coors Light $4</span><span class="drink-chip">Bluemoon $7</span>
+                <span class="drink-chip">Corona Premier $7.09</span><span class="drink-chip">Modelo Especial $7</span>
+                <span class="drink-chip">Dog Fish Head $7</span>
+            </div>
+
+            <div class="drink-cat">🍷 Wine</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Cabernet $11.99 / $39 botella</span>
+                <span class="drink-chip">Merlot $11.99 / $39 botella</span>
+                <span class="drink-chip">Pinot Noir $11.99 / $39 botella</span>
+                <span class="drink-chip">Chardonnay $11.99 / $39 botella</span>
+                <span class="drink-chip">Sauvignon Blanc $11.99 / $39 botella</span>
+                <span class="drink-chip">Prosecco $8 copa / $29.50 botella</span>
+            </div>
+
+            <div class="drink-cat">🥤 Alcohol-free</div>
+            <div class="drink-grid">
+                <span class="drink-chip">Fountain (Coke, Sprite...) $1.99</span>
+                <span class="drink-chip">Juice $1.99</span><span class="drink-chip">Hot Tea $1.99</span>
+                <span class="drink-chip">Slushee $4.99</span><span class="drink-chip">Mocktails $5.99</span>
+                <span class="drink-chip">Flavor Refresher $5.99</span>
+            </div>
+
+            <div class="bar-note">🥃 We also offer Whisky, Tequila, Rum, Gin, Vodka, and Cognac.
+                Ask your server for our full selection.</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    </div>
+    </div>
+
+    <!-- DELIVERY PANEL-->
+    <div id="order-panel">
+        <div class="order-wrap">
+            <div class="order-header">
+                <div class="order-header-title">🛵 ORDER ONLINE</div>
+                <button class="order-close" onclick="toggleOrder()">x</button>
+            </div>
+            <div class="order-btns">
+                <a class="order-btn order-btn-uber"
+                    href="https://www.ubereats.com/us-es/store/firepan-korean-bbq-waldorf/bK6wQEefW3aa871UmxD7yg?diningMode=DELIVERY&ps=1&sc=SEARCH_SUGGESTION"
+                    target="_blank" rel="noopener">
+                    <div
+                        style="background:#000;border-radius:10px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;line-height:1.2;padding:4px;">
+                        <span style="font-size:10px;font-weight:700;color:#fff;">Uber</span>
+                        <span style="font-size:10px;font-weight:700;color:#06C167;">Eats</span>
+                    </div>
+                    <div class="btn-text">
+                        <div class="btn-name">UberEats</div>
+                        <div class="btn-sub">Delivery · Pickup available</div>
+                    </div>
+                    <div class="btn-arr">›</div>
+                </a>
+
+                <a class="order-btn order-btn-doordash"
+                    href="https://www.doordash.com/store/firepan-korean-bbq-waldorf-33402255/59424348/?event_type=autocomplete&pickup=false"
+                    target="_blank" rel="noopener">
+                    <div
+                        style="background:#000;border-radius:10px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;line-height:1.2;padding:4px;">
+                        <span style="font-size:12px;font-weight:700;color:#ff3008;">Door</span>
+                        <span style="font-size:12px;font-weight:700;color:#ff3008;">Dash</span>
+                    </div>
+                    <div class="btn-text">
+                        <div class="btn-name">DoorDash</div>
+                        <div class="btn-sub">Fast delivery to you</div>
+                    </div>
+                    <div class="btn-arr">›</div>
+                </a>
+
+                <a class="order-btn order-btn-grubhub"
+                    href="https://www.grubhub.com/restaurant/firepan-korean-bbq-3237-plaza-dr-waldorf/11491512"
+                    target="_blank" rel="noopener">
+                    <div
+                        style="background:#f63440;border-radius:10px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;line-height:1.2;padding:4px;">
+                        <span style="font-size:10px;font-weight:700;color:#fff;">Grub</span>
+                        <span style="font-size:10px;font-weight:700;color:#fff;">Hub</span>
+                    </div>
+                    <div class="btn-text">
+                        <div class="btn-name">GRUBHUB</div>
+                        <div class="btn-sub">Delivery available</div>
+                    </div>
+                    <div class="btn-arr">›</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>📞<a href="tel:+13013748170">(301) 374-8170</a></div>
+        <div>Mon-Thu: 11:30am - 11:00PM &nbsp;·&nbsp; Fri-Sat: 11:30am - 12:00am</div>
+        <div>Sun: 11:30am - 11:00pm</div>
+        <div style="margin-top:10px; font: size 10px; opacity:0.5;">3237 Plaza Dr, Waldorf, MD 20603</div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
