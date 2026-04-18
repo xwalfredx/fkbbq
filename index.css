@@ -100,7 +100,7 @@ body {
 
 /* HAPPY HOUR */
 .hh-banner {
-  margin: 14px 20px 0;
+  margin: 5px 20px 0;
   background: linear-gradient(135deg, #2a1800, #3d2200);
   border: 1px solid rgba(243, 156, 18, 0.4);
   border-radius: 14px;
